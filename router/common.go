@@ -1,4 +1,4 @@
-package main
+package router
 
 import (
 	"fmt"
@@ -7,6 +7,10 @@ import (
 )
 
 var res string
+
+func MakeRouter() {
+	fmt.Println("gin is ready")
+}
 
 func Logger() gin.HandlerFunc {
 	return func(c *gin.Context) {
@@ -21,15 +25,14 @@ func Logger() gin.HandlerFunc {
 func secondLogger() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		res = res + "d" + c.Request.URL.Path
-
+		s := "s"
 		c.Next() //处理请求
 
-		res = res + "e" + fmt.Sprintf("%d", c.Writer.Status)
+		res = res + "e " + s + fmt.Sprintf("%d", c.Writer.Status)
 	}
 }
 
-//使用
-func main() {
+func init() {
 	r := gin.Default()
 	r.Use(Logger())
 	r.Use(secondLogger())
