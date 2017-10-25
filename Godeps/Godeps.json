@@ -1,7 +1,10 @@
 {
-	"ImportPath": "github.com/user/TestServer",
+	"ImportPath": "github.com/wanmii/TestServer",
 	"GoVersion": "go1.8",
 	"GodepVersion": "v79",
+	"Packages": [
+		"./..."
+	],
 	"Deps": [
 		{
 			"ImportPath": "github.com/gin-gonic/gin",
@@ -21,6 +24,11 @@
 		{
 			"ImportPath": "github.com/golang/protobuf/proto",
 			"Rev": "17ce1425424ab154092bbb43af630bd647f3bb0d"
+		},
+		{
+			"ImportPath": "github.com/jwt-go",
+			"Comment": "v3.0.0-20-ga539ee1",
+			"Rev": "a539ee1a749a2b895533f979515ac7e6e0f5b650"
 		},
 		{
 			"ImportPath": "github.com/manucorporat/sse",

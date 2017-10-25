@@ -7,6 +7,7 @@ import (
 
 //使用
 func main() {
-	router.MakeRouter()
+
 	jwt.Test()
+	router.MakeRouter()
 }

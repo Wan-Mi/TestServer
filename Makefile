@@ -3,3 +3,6 @@ server:
 
 run:
 	go run ./cmds/main.go
+
+save:
+	go dep save ./...
