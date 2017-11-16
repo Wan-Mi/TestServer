@@ -12,5 +12,5 @@ func main() {
 	//protoBuff.Test()
 	//router.MakeRouter()
 
-	syncGoroutine.TestWaitGroup()
+	syncGoroutine.ChanTests()
 }
