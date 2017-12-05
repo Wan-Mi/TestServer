@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/wanmii/TestServer/syncGoroutine"
+	"fmt"
 )
 
 //使用
@@ -12,5 +12,12 @@ func main() {
 	//protoBuff.Test()
 	//router.MakeRouter()
 
-	syncGoroutine.ChanTests()
+	//	syncGoroutine.ChanTests()
+
+	getTest("hello")
+}
+
+func getTest(str string) {
+
+	fmt.Println(str)
 }
