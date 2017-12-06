@@ -11,13 +11,14 @@ func main() {
 	//iInterface.Test()
 	//protoBuff.Test()
 	//router.MakeRouter()
+	//syncGoroutine.ChanTests()
 
-	//	syncGoroutine.ChanTests()
-
-	getTest("hello")
+	// getTest("hello")
 }
 
-func getTest(str string) {
+func getTest(str string) string {
 
-	fmt.Println(str)
+	fmt.Println(11891.46 - 3460 - 1000 - 142 - 200)
+
+	return str
 }

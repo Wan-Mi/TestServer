@@ -22,6 +22,11 @@
 			"Rev": "d5b353c5d5a560322e6d96121c814115562501f7"
 		},
 		{
+			"ImportPath": "github.com/golang/mock/gomock",
+			"Comment": "v1.0.0-68-g747e9e6",
+			"Rev": "747e9e6390e12b0d987c261bdc89a51e76b9f5fc"
+		},
+		{
 			"ImportPath": "github.com/golang/protobuf/proto",
 			"Rev": "17ce1425424ab154092bbb43af630bd647f3bb0d"
 		},

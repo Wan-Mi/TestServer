@@ -1,6 +1,7 @@
-package main
-
+//白盒测试 自动生成测试表格
 //gotests -all -w ./cmds/main.go
+
+package main
 
 import (
 	"testing"
