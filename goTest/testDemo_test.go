@@ -3,6 +3,8 @@ package goTest
 import (
 	"fmt"
 	"testing"
+
+	. "github.com/smartystreets/goconvey/convey"
 )
 
 func helloWorld() string {
@@ -26,4 +28,18 @@ func BenchmarkUnit(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		helloWorld()
 	}
+}
+
+// goConvey
+func TestStringEqual(t *testing.T) {
+	Convey("TestStringEqual:", t, func() {
+		a := "xxxx"
+		b := "xxxx"
+
+		So(StringEqual(a, b), ShouldBeTrue)
+	})
+}
+
+func StringEqual(a, b string) bool {
+	return a == b
 }
