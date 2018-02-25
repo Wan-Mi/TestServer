@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+
+	"github.com/Wan-Mi/TestServer/syncGoroutine"
 )
 
 //使用
@@ -11,7 +13,8 @@ func main() {
 	//iInterface.Test()
 	//protoBuff.Test()
 	//router.MakeRouter()
-	//syncGoroutine.ChanTests()
+	syncGoroutine.ChanTests()
+	syncGoroutine.TestWaitGroup()
 
 	// getTest("hello")
 }

@@ -5,25 +5,23 @@ import (
 	"sync"
 )
 
+// waitGroup
 func TestWaitGroup() {
-	testSlice := []int64{
-		1,
-		2,
-		3,
-		4,
-	}
-	var res int64
+
+	resNums := []int32{}
 
 	var wg sync.WaitGroup
-	wg.Add(len(testSlice))
-	for _, val := range testSlice {
-		go func(t int64) {
+	var mt sync.Mutex
+	wg.Add(100000)
+	for val := 0; val < 100000; val++ {
+		go func(t int32) {
 			defer wg.Done()
-			res += t
-
-		}(val)
+			mt.Lock()
+			resNums = append(resNums, t)
+			mt.Unlock()
+		}(int32(val))
 	}
 	wg.Wait()
 
-	fmt.Println("results is :", res)
+	fmt.Println("results is:", len(resNums))
 }

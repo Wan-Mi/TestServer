@@ -1,7 +1,9 @@
 package syncGoroutine
 
-import "fmt"
-import "time"
+import (
+	"fmt"
+	"time"
+)
 
 // no buffer channel
 func chanTestBasic() {
@@ -15,29 +17,28 @@ func chanTestBasic() {
 
 // channel with buffer
 func chanTestBuffer() {
-	numbers := []int32{
-		1, 2, 3, 4, 5,
-	}
-	ch := make(chan int32, len(numbers))
+	ch := make(chan int32, 0)
 
-	for _, x := range numbers {
+	for x := 1; x < 100000; x++ {
 		go func(x int32) {
 			x++
 			ch <- x
-		}(x)
+		}(int32(x))
 	}
 
-	for range numbers {
+	resNums := []int32{}
+	for x := 1; x < 100000; x++ {
 		select {
 		case y := <-ch:
-			fmt.Println(y)
-		case <-time.After(10 * time.Second):
+			resNums = append(resNums, y)
+		case <-time.After(5 * time.Second):
 			fmt.Println("time out")
 		}
 	}
+	fmt.Println("results is:", len(resNums))
 }
 
 func ChanTests() {
-	chanTestBasic()
+	// chanTestBasic()
 	chanTestBuffer()
 }
